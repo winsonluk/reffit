@@ -1,4 +1,4 @@
 numpy==1.11.1
-OAuth2Util==6/18/16
+OAuth2Util
 pandas==0.18.1
 praw==3.5.0
