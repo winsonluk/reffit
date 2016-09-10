@@ -1,0 +1,11 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+#OS X folder attributes
+.DS_Store
+
+#Private keys
+config.ini
+oauth.ini

@@ -1,0 +1,13 @@
+[setup]
+NUM_RETRIEVE: 1000
+MIN_CONFIDENCE: 5
+SENTENCES_IN_REPLY: 5
+SLEEP_TIME: 1
+
+[praw]
+USER_AGENT: '<user_agent>'
+
+[amazon]
+AMAZON_KEY: <amazon_key>
+AMAZON_SECRET: <amazon_secret>
+AMAZON_ASSOCIATE: <amazon_associate>

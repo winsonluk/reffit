@@ -1,0 +1,22 @@
+# See the praw-OAuth2Util README for more information on how to configure OAuth2 with PRAW.
+# https://github.com/SmBe19/praw-OAuth2Util/blob/master/OAuth2Util/README.md
+
+[app]
+# These grant the bot to every scope, only use those you want it to access.
+scope=identity,account,edit,flair,history,livemanage,modconfig,modflair,modlog,modothers,modposts,modself,modwiki,mysubreddits,privatemessages,read,report,save,submit,subscribe,vote,wikiedit,wikiread
+refreshable=True
+app_key=<thisistheid>
+app_secret=<ThisIsTheSecretDoNotShare>
+
+[server]
+server_mode=False
+url=127.0.0.1
+port=65010
+redirect_path=authorize_callback
+link_path=oauth
+
+# Will be filled automatically
+[token]
+token=None
+refresh_token=None
+valid_until=0
