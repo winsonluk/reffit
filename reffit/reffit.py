@@ -27,7 +27,7 @@ import sys
 import time
 import urllib2
 
-import pandas  # Import before OAuth2Util to avoid numpy.ufunc errors
+import pandas  # Import before OAuth2Util to avoid numpy.ufunc errors.
 import numpy
 import OAuth2Util
 import praw
@@ -37,7 +37,7 @@ from bs4 import BeautifulSoup
 from fake_useragent import UserAgent
 
 def main():
-    #Configure variables from config.ini
+    # Configure variables from config.ini
     config = ConfigParser.ConfigParser()
     config.read('config.ini')
     NUM_RETRIEVE = int(config.get('setup', 'NUM_RETRIEVE'))
@@ -49,15 +49,15 @@ def main():
     AMAZON_SECRET = config.get('amazon', 'AMAZON_SECRET')
     AMAZON_ASSOCIATE = config.get('amazon', 'AMAZON_ASSOCIATE')
 
-    #Initialize variables
+    # Initialize variables
     global keywords, c
-    alreadyReplied = []  #Tracks users who have already been replied to
+    alreadyReplied = []  # Tracks users whom the bot has replied to.
     keywords = pandas.read_csv('data.csv')
     conn = sqlite3.connect('templates.db')
     c = conn.cursor()
     subreddits = '+'.join([line for line in keywords['subreddits'].dropna()])
 
-    #Connect to Reddit and Amazon
+    # Connect to Reddit and Amazon.
     r = praw.Reddit(USER_AGENT)
     o = OAuth2Util.OAuth2Util(r)
     amazon = AmazonAPI(AMAZON_KEY, AMAZON_SECRET, AMAZON_ASSOCIATE)
@@ -73,7 +73,7 @@ def main():
                 if 'reddit.com' not in i.url:
                     raise ValueError('SKIPPING: LINK SUBMISSION')
 
-                #If Amazon link is found in submission (self) text
+                # Amazon link is found in submission (self) text.
                 selfStr = i.selftext.encode('ascii', 'ignore').lower()
                 if  ('/dp/' in selfStr) or ('/gp/' in selfStr):
                     productData = find_in_amazon(
@@ -104,9 +104,9 @@ def main():
                         print ''
                         raise ValueError('SKIPPING: DONE REPLYING')
                     elif type(productData) is str:
-                        print productData  #Error message
+                        print productData  # Error message
 
-                #If Amazon link is found in comment
+                # Amazon link is found in comment.
                 for comment in i.comments:
                     commentStr = str(comment).encode('ascii', 'ignore').lower()
                     if (
@@ -147,9 +147,9 @@ def main():
                             print ''
                             raise ValueError('SKIPPING: DONE REPLYING')
                         elif type(productData) is str:
-                            print productData  #Error message
+                            print productData  # Error message
 
-                #If item keyword is found in title
+                # Item keyword is found in title.
                 for word in keywords['items'].dropna():
                     if (
                             word.lower()
@@ -189,7 +189,7 @@ def main():
                                 print ''
                                 raise ValueError('SKIPPING: DONE REPLYING')
                             elif type(productData) is str:
-                                print productData  #Error message
+                                print productData  # Error message
 
                 raise ValueError('SKIPPING: NOTHING FOUND')
             except KeyboardInterrupt:
@@ -207,7 +207,7 @@ def find_in_amazon(amazon, associate, product):
     opener = urllib2.build_opener()
     opener.addheaders = [('User-agent', str(UserAgent().random))]
 
-    #Initialize product info
+    # Initialize product info.
     try:
         brand = product.brand
         category = product.browse_nodes[len(product.browse_nodes)-1].name
@@ -220,7 +220,7 @@ def find_in_amazon(amazon, associate, product):
         return 'ERROR: PRODUCT NOT FOUND'
         print sys.exc_info()[0]
 
-    #Add editorial and customer reviews
+    # Add editorial and customer reviews.
     try:
         reviews.extend(
             re.split(
@@ -228,23 +228,23 @@ def find_in_amazon(amazon, associate, product):
                 (BeautifulSoup(product.editorial_review, 'lxml')
                 .get_text().encode('ascii', 'ignore'))
                 )
-            )  #Scrape and add editorial reviews
+            )  # Scrape and add editorial reviews
         review = (BeautifulSoup(opener.open(product.reviews[1]).read(), 'lxml')
-            .findAll('div', {'class':'reviewText'}))  #Scrape customer reviews
+            .findAll('div', {'class':'reviewText'}))  # Scrape customer reviews
         for i in range(len(review)):
             reviews.extend(
                 re.split(
                     '(?<=[.!?]) +',
                     review[i].get_text().encode('ascii', 'ignore')
                     )
-                )  #Add customer reviews
+                )  # Add customer reviews
     except:
         print 'ERROR: PROBLEM FETCHING REVIEWS'
         print sys.exc_info()[0]
 
     productData = {}
 
-    #Create Amazon link
+    # Create Amazon link.
     if ',' in product.title:
         link = (
             '[' + product.title[:product.title.index(',')]
@@ -257,7 +257,7 @@ def find_in_amazon(amazon, associate, product):
             + product.asin + '/?tag=' + associate + ')'
             )
 
-    #Clean up scraped text
+    # Clean up scraped text.
     features = [
         'This has ' + x.encode('ascii', 'ignore').lower() + '. '
         for x in features
