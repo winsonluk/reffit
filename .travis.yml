@@ -1,4 +1,5 @@
 language: python
+sudo: required
 
 # command to install dependencies
 install: "pip install -r requirements.txt"
