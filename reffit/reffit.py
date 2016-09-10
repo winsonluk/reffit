@@ -27,7 +27,7 @@ import sys
 import time
 import urllib2
 
-import pandas # Must import before OAuth2Util to avoid numpy.ufunc warnings
+import pandas  # Import before OAuth2Util to avoid numpy.ufunc errors
 import numpy
 import OAuth2Util
 import praw
