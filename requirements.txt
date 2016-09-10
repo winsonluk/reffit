@@ -1,7 +1,7 @@
 beautifulsoup4==4.5.1
 fake-useragent==0.1.2
 numpy==1.11.1
-praw-OAuth2Util
 pandas==0.18.1
 praw==3.5.0
+praw-OAuth2Util
 python-amazon-simple-product-api==2.1.0
