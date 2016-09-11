@@ -18,8 +18,6 @@
 #
 ###############################################################################
 
-from __future__ import print_function
-
 import ConfigParser
 import math
 import random
@@ -83,16 +81,16 @@ def main():
                         amazon.similarity_lookup(ItemId=get_asin(selfStr))[0]
                         )
                     if type(productData) is dict:
-                        print('FOUND', productData['link'], 'IN SELF:', i.id)
+                        print 'FOUND', productData['link'], 'IN SELF:', i.id
                         alreadyReplied.append(str(i.author))
-                        print('')
-                        print(generate_comment(
+                        print ''
+                        print generate_comment(
                             SENTENCES_IN_REPLY, productData['link'],
                             productData['brand'],
                             str(productData['category']).lower(),
                             productData['price'], productData['features'],
                             productData['reviews']
-                            ))
+                            )
                         #comment.reply(
                         #    generate_comment(
                         #        SENTENCES_IN_REPLY, productData['link'],
@@ -103,10 +101,10 @@ def main():
                         #        productData['reviews']
                         #        )
                         #    )
-                        print('')
+                        print ''
                         raise ValueError('SKIPPING: DONE REPLYING')
                     elif type(productData) is str:
-                        print(productData)  # Error message
+                        print productData  # Error message
 
                 # Amazon link is found in comment.
                 for comment in i.comments:
@@ -122,20 +120,20 @@ def main():
                                 )[0]
                             )
                         if type(productData) is dict:
-                            print((
+                            print (
                                 'FOUND', productData['link'],
                                 'IN COMMENT', comment.id
-                                ))
+                                )
                             alreadyReplied.append(str(i.author))
                             alreadyReplied.append(str(comment.author))
-                            print('')
-                            print(generate_comment_with_reply(
+                            print ''
+                            print generate_comment_with_reply(
                                 SENTENCES_IN_REPLY, productData['link'],
                                 productData['brand'],
                                 str(productData['category']).lower(),
                                 productData['price'], productData['features'],
                                 productData['reviews']
-                                ))
+                                )
                             #comment.reply(
                             #    generate_comment_with_reply(
                             #        SENTENCES_IN_REPLY, productData['link'],
@@ -146,10 +144,10 @@ def main():
                             #        productData['reviews']
                             #        )
                             #    )
-                            print('')
+                            print ''
                             raise ValueError('SKIPPING: DONE REPLYING')
                         elif type(productData) is str:
-                            print(productData)  # Error message
+                            print productData  # Error message
 
                 # Item keyword is found in title.
                 for word in keywords['items'].dropna():
@@ -165,18 +163,18 @@ def main():
                                     )[0]
                                 )
                             if type(productData) is dict:
-                                print('FOUND', word, 'IN TITLE', i.id)
+                                print 'FOUND', word, 'IN TITLE', i.id
                                 alreadyReplied.append(str(i.author))
                                 productData['category'] = word
-                                print('')
-                                print(generate_comment(
+                                print ''
+                                print generate_comment(
                                     SENTENCES_IN_REPLY, productData['link'],
                                     productData['brand'],
                                     str(productData['category']).lower(),
                                     productData['price'],
                                     productData['features'],
                                     productData['reviews']
-                                    ))
+                                    )
                                 #comment.reply(
                                 #    generate_comment(
                                 #        SENTENCES_IN_REPLY,
@@ -188,20 +186,20 @@ def main():
                                 #        productData['reviews']
                                 #        )
                                 #    )
-                                print('')
+                                print ''
                                 raise ValueError('SKIPPING: DONE REPLYING')
                             elif type(productData) is str:
-                                print(productData)  # Error message
+                                print productData  # Error message
 
                 raise ValueError('SKIPPING: NOTHING FOUND')
             except KeyboardInterrupt:
                 raise
             except ValueError as err:
-                print(err)
+                print err
             except:
-                print('ERROR: PROBLEM IN MAIN')
-                print(sys.exc_info()[0])
-        print('SLEEPING FOR', SLEEP_TIME, 'SECONDS...')
+                print 'ERROR: PROBLEM IN MAIN'
+                print sys.exc_info()[0]
+        print 'SLEEPING FOR', SLEEP_TIME, 'SECONDS...'
         time.sleep(SLEEP_TIME)
 
 def get_asin(text):
@@ -252,7 +250,7 @@ def find_in_amazon(amazon, associate, product):
         link = ''
     except:
         return 'ERROR: PRODUCT NOT FOUND'
-        print(sys.exc_info()[0])
+        print sys.exc_info()[0]
 
     # Add editorial and customer reviews.
     try:
@@ -273,8 +271,8 @@ def find_in_amazon(amazon, associate, product):
                     )
                 )  # Add customer reviews
     except:
-        print('ERROR: PROBLEM FETCHING REVIEWS')
-        print(sys.exc_info()[0])
+        print 'ERROR: PROBLEM FETCHING REVIEWS'
+        print sys.exc_info()[0]
 
     # Create Amazon link.
     if ',' in product.title:
@@ -339,8 +337,8 @@ def generate_comment(
     except:
         feature = ''
         review = ''
-        print('ERROR: NO FEATURE OR REVIEW')
-        print(sys.exc_info()[0])
+        print 'ERROR: NO FEATURE OR REVIEW'
+        print sys.exc_info()[0]
     apology = '(sorry for the typos, english is my second language).'
     disclaimer = (
         '\n\n *** \n\n ^^^Bleep, ^^^bloop! ^^^This ^^^comment ^^^was '
