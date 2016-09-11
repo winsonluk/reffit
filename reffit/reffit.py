@@ -202,6 +202,38 @@ def main():
         print 'SLEEPING FOR', SLEEP_TIME, 'SECONDS...'
         time.sleep(SLEEP_TIME)
 
+def get_asin(text):
+    '''Return Amazon ASIN'''
+    if '/dp/' in text:
+        start_index = text.find('/dp/') + 4
+    elif '/gp/product/' in text:
+        start_index = text.find('/gp/') + 12
+    elif '/gp/' in text:
+        start_index = text.find('/gp/') + 9
+    else:
+        raise ValueError('ERROR: ASIN NOT FOUND')
+    if start_index+10 > len(text):
+        raise ValueError('ERROR: ASIN OUT OF RANGE')
+    else:
+        asin = text[start_index:start_index+10]
+    return asin
+
+def calculate_confidence(submission):
+    '''Calculate confidence in whether to suggest a product'''
+    confidence = 0
+    for word in keywords['suggestives'].dropna():
+        if (
+                word.lower()
+                in submission.title.encode('ascii', 'ignore').lower()
+            ):
+            confidence += 3
+        if (
+                word.lower()
+                in submission.selftext.encode('ascii', 'ignore').lower()
+            ):
+            confidence += 2
+    return confidence
+
 def find_in_amazon(amazon, associate, product):
     '''Return formatted product data as a dictionary'''
     opener = urllib2.build_opener()
@@ -242,8 +274,6 @@ def find_in_amazon(amazon, associate, product):
         print 'ERROR: PROBLEM FETCHING REVIEWS'
         print sys.exc_info()[0]
 
-    productData = {}
-
     # Create Amazon link.
     if ',' in product.title:
         link = (
@@ -267,6 +297,7 @@ def find_in_amazon(amazon, associate, product):
         features = [x for x in features if not word.lower() in x.lower()]
         reviews = [x for x in reviews if not word.lower() in x.lower()]
 
+    productData = {}
     productData['brand'] = brand
     productData['category'] = category
     productData['features'] = features
@@ -274,39 +305,6 @@ def find_in_amazon(amazon, associate, product):
     productData['reviews'] = reviews
     productData['link'] = link
     return productData
-
-def get_asin(comment):
-    '''Return Amazon ASIN'''
-    if '/dp/' in comment:
-        start_index = comment.find('/dp/') + 4
-    elif '/gp/product/' in comment:
-        start_index = comment.find('/gp/') + 12
-    elif '/gp/' in comment:
-        start_index = comment.find('/gp/') + 9
-    else:
-        raise ValueError('ERROR: ASIN NOT FOUND')
-
-    if start_index+10 > len(comment):
-        raise ValueError('ERROR: ASIN OUT OF RANGE')
-    else:
-        asin = comment[start_index:start_index+10]
-    return asin
-
-def calculate_confidence(submission):
-    '''Calculate confidence in whether to suggest a product'''
-    confidence = 0
-    for word in keywords['suggestives'].dropna():
-        if (
-                word.lower()
-                in submission.title.encode('ascii', 'ignore').lower()
-            ):
-            confidence += 3
-        if (
-                word.lower()
-                in submission.selftext.encode('ascii', 'ignore').lower()
-            ):
-            confidence += 2
-    return confidence
 
 def random_string(tableName, columnName):
     '''Return a random template string from a specified column'''
@@ -319,17 +317,6 @@ def random_string(tableName, columnName):
                 )
             )
     return str(c.fetchone()[0])
-
-def generate_comment_with_reply(
-    length, link, brand, category, price, features, reviews
-    ):
-    '''Return a reply plus a randomly generated reddit comment'''
-    return (
-        random_string('amazonCommentReply', 'badProduct')
-        + generate_comment(length, link, brand, category,
-            price, features, reviews
-            )
-        )
 
 def generate_comment(
     length, link, brand, category, price, features, reviews
@@ -370,6 +357,17 @@ def generate_comment(
         + ' ' + review
         + ' ' + apology
         + disclaimer
+        )
+
+def generate_comment_with_reply(
+    length, link, brand, category, price, features, reviews
+    ):
+    '''Return a reply plus a randomly generated reddit comment'''
+    return (
+        random_string('amazonCommentReply', 'badProduct')
+        + generate_comment(length, link, brand, category,
+            price, features, reviews
+            )
         )
 
 if __name__ == '__main__':

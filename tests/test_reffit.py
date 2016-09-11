@@ -4,7 +4,7 @@ import unittest
 # Import the package
 import reffit
 
-# Import the reffit module
+# Import the get_asin function from reffit module
 from reffit.reffit import get_asin
 
 
