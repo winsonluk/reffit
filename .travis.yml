@@ -4,6 +4,12 @@ sudo: required
 python:
     - '2.6'
     - '2.7'
+    - '3.2'
+    - '3.3'
+    - '3.4'
+    - '3.5'
+    - '3.5-dev'
+    - 'nightly'
 
 # command to install dependencies
 install:
