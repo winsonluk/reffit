@@ -19,6 +19,8 @@
 ###############################################################################
 
 from __future__ import print_function
+from future.standard_library import install_aliases
+install_aliases()
 
 import math
 import random
@@ -26,13 +28,12 @@ import re
 import sqlite3
 import sys
 import time
-import urllib2
+import urllib.request
 
 import pandas  # Import before OAuth2Util to avoid numpy.ufunc errors.
 import numpy
 import OAuth2Util
 import praw
-
 from amazon.api import AmazonAPI
 from bs4 import BeautifulSoup
 from configparser import ConfigParser
@@ -238,7 +239,7 @@ def calculate_confidence(submission):
 
 def find_in_amazon(amazon, associate, product):
     '''Return formatted product data as a dictionary'''
-    opener = urllib2.build_opener()
+    opener = urllib.request.build_opener()
     opener.addheaders = [('User-agent', str(UserAgent().random))]
 
     # Initialize product info.
