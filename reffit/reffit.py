@@ -20,7 +20,6 @@
 
 from __future__ import print_function
 
-import ConfigParser
 import math
 import random
 import re
@@ -36,6 +35,7 @@ import praw
 
 from amazon.api import AmazonAPI
 from bs4 import BeautifulSoup
+from configparser import ConfigParser
 from fake_useragent import UserAgent
 
 def main():
