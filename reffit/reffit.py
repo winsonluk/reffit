@@ -43,7 +43,7 @@ from bs4 import BeautifulSoup
 from fake_useragent import UserAgent
 
 def main():
-    # Configure variables from config.ini
+    # Configure variables from config.ini.
     config = configparser.ConfigParser()
     config.read('config.ini')
     NUM_RETRIEVE = int(config.get('setup', 'NUM_RETRIEVE'))
@@ -55,7 +55,7 @@ def main():
     AMAZON_SECRET = config.get('amazon', 'AMAZON_SECRET')
     AMAZON_ASSOCIATE = config.get('amazon', 'AMAZON_ASSOCIATE')
 
-    # Initialize variables
+    # Initialize variables.
     global keywords, c
     alreadyReplied = []  # Tracks users whom the bot has replied to.
     keywords = pandas.read_csv('data.csv')
