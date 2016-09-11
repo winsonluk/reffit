@@ -1,4 +1,4 @@
-<a>
+<a href="docs/images/logo.gif">
     <img src="docs/images/logo_tiny.gif" align="right" height="70" />
 </a>
 
