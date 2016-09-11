@@ -19,8 +19,6 @@
 ###############################################################################
 
 from __future__ import print_function
-from future.standard_library import install_aliases
-install_aliases()
 
 import math
 import random
@@ -28,20 +26,25 @@ import re
 import sqlite3
 import sys
 import time
-import urllib.request
+try:
+    # For Python 3.0 and later
+    import urllib.request
+except ImportError:
+    # Fall back to Python 2's urllib2
+    import urllib2
 
 import pandas  # Import before OAuth2Util to avoid numpy.ufunc errors.
+import configparser
 import numpy
 import OAuth2Util
 import praw
 from amazon.api import AmazonAPI
 from bs4 import BeautifulSoup
-from configparser import ConfigParser
 from fake_useragent import UserAgent
 
 def main():
     # Configure variables from config.ini
-    config = ConfigParser.ConfigParser()
+    config = configparser.ConfigParser()
     config.read('config.ini')
     NUM_RETRIEVE = int(config.get('setup', 'NUM_RETRIEVE'))
     MIN_CONFIDENCE = int(config.get('setup', 'MIN_CONFIDENCE'))
@@ -239,7 +242,12 @@ def calculate_confidence(submission):
 
 def find_in_amazon(amazon, associate, product):
     '''Return formatted product data as a dictionary'''
-    opener = urllib.request.build_opener()
+    try:
+        # For Python 3.0 and later.
+        opener = urllib.request.build_opener()
+    except:
+        # Fall back to Python 2's urllib2
+        opener = urllib2.build_opener()
     opener.addheaders = [('User-agent', str(UserAgent().random))]
 
     # Initialize product info.
