@@ -4,11 +4,13 @@ MIN_CONFIDENCE: 5
 SENTENCES_IN_REPLY: 5
 SLEEP_TIME: 1
 
+# See https://github.com/reddit/reddit/wiki/API
+# for User-Agent string requirements.
 [praw]
-USER_AGENT: '<user_agent>'
+USER_AGENT: '<platform>:<app ID>:<version string> (by /u/<reddit username>)'
 
 # See https://affiliate-program.amazon.com/gp/advertising/api/detail/your-account.html
-# for instructions on retrieving your Amazon access key
+# for instructions on creating an Amazon access key.
 [amazon]
 AMAZON_KEY: <amazon_key>
 AMAZON_SECRET: <amazon_secret>
