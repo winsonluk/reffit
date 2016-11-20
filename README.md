@@ -17,3 +17,10 @@ Also indicative of a user's purchasing tendency is the text of his or her commen
 Furthermore, users who mention the plural form of multiword product category keywords, such as "arm warmers", "laptop sleeves", or "hand sanitizers", are likely to be seeking a suggestions for a particular item within such category.
 
 A comment's subreddit, proportion of suggestive keywords, and mentions of general products can together give us a coherent presumption towards the user's tendency to purchase.
+
+
+Generating a Credible Response
+------------------------------
+A personalized and enthusiastic suggestion is more persuasive than any combination of price, rating, or even relevance. But how can this be automated?
+
+The first step is not to suggest to a user, but to reply to one. By responding to a user's comment directly, we will have already established a sense of shared reciprocity with the user before he or she even begins to read our suggestion.
