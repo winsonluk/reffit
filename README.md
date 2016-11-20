@@ -39,7 +39,7 @@ Example
 </a>
 
 -------
-### [Actual Product: ALASKA BEAR - Classic Cash Money Clip Credit Card Holder](https://smile.amazon.com/ALASKA-BEAR-Classic-Silver-Credit/dp/B00JSJHQP6/)
+### Actual Product: [ALASKA BEAR - Classic Cash Money Clip Credit Card Holder](https://smile.amazon.com/ALASKA-BEAR-Classic-Silver-Credit/dp/B00JSJHQP6/)
 -------
 
 <a href="docs/examples/annotated_comment.png">
