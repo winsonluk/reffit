@@ -42,7 +42,7 @@ Broadly, Reffit works in three steps.
 ### 1. Searching
 How many of the words in the comment are equivalent to keywords within [this CSV file](reffit/data.csv)?
 
-| Suggestives (partial list)     |
+|Suggestives (partial list)|
 |-----------------|
 | recommended     |
 | recommending    |
@@ -77,28 +77,12 @@ How many of the words in the comment are equivalent to keywords within [this CSV
 | product         |
 | products        |
 | item            |
-| items           |
-| check           |
-| bought          |
-| buying          |
-| buy             |
-| buys            |
-| purchased       |
-| purchasing      |
-| purchase        |
-| purchases       |
-| found           |
-| finding         |
-| find            |
-| finds           |
-| deal            |
-| price           |
-| worth           |
+
 
 ### 2. Matching
 Does the user mention a brand or product category, and if so, which Amazon product is most relevant to what the user is envisioning?
 
-| Items (partial list)              |
+| Categories (partial list)         |
 |-----------------------------------|
 | Cold Weather Accessories          |
 | Arm Warmers                       |
