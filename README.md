@@ -135,9 +135,9 @@ Does the user mention a brand or product category, and if so, which Amazon produ
 | Checkbook Covers                  |
 
 ### 3. Recommending
-How can we construct and integrate 3-4 sentences to highlight the product's attributes while maintaining a down-to-earth tone?
+How can we integrate 3-4 sentences together in order to highlight the product's attributes while maintaining a down-to-earth tone?
 
-| brand                                                                  | category                                                                  | price                                                   | link                                                                    |
+|[brand](reffit/templates.db)|[category](reffit/templates.db)|[price](reffit/templates.db)|[link](reffit/templates.db)|
 |------------------------------------------------------------------------|---------------------------------------------------------------------------|---------------------------------------------------------|-------------------------------------------------------------------------|
 | {} is one of the better brands for these.                              | This is probably the one of the better {}.                                | For less than {}, you can't go wrong.                   | I prefer {}.                                                            |
 | {} makes nice stuff.                                                   | I prefer this when it comes to {}.                                        | It's a not a bad deal for less than {}.                 | I opted for {}.                                                         |
