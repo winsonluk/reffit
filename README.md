@@ -32,6 +32,8 @@ Finally, the recommended product must be highly relevant to what the user is loo
 Example
 -------
 
+-------
+
 <a href="docs/examples/comment.png">
     <img src="docs/examples/comment.png" align="center" height="300" />
 </a>
@@ -41,6 +43,8 @@ Example
 <a href="docs/examples/annotated_comment.png">
     <img src="docs/examples/annotated_comment.png" align="center" height="300" />
 </a>
+
+-------
 
 **Disclaimer: Like the Titanic, this bot was live for only four days and for testing purposes only. All referrals generated in this period were redirected to Amazon's charity foundation via Amazon Smile. While this repository is free and open source, I strongly discourage the use of Reffit solely for financial profit.**
 
