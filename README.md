@@ -25,6 +25,9 @@ A personalized and enthusiastic suggestion is more persuasive than any combinati
 
 The first step is not to suggest to a user, but to reply to one. By responding to a user's comment directly, we will have already established a sense of shared reciprocity with the user before he or she even begins to read our suggestion.
 
-The suggestion itself must sound like a suggestion that a user would hear from his or her peers. This bot achieves this by implementing randomized sentence templates customized to a user's past comment history. While this method may not exactly pass the Turing test, genuine, human-like responses may soon be possible with natural language processing and neural networks.
+The suggestion itself must sound like a suggestion that a user would hear from his or her peers. This bot achieves this by implementing randomized sentence templates customized to a user's past comment history. (While this method may not exactly pass the Turing test, genuine, human-like responses may soon be possible with natural language processing and neural networks.)
 
 Finally, the recommended product must be highly relevant to what the user is looking for. The bot determines nouns in a user's comment which correlate to a specific Amazon product category, then returns a relevant, highly-rated product in such category with such keywords. The product's brand, price, decription, reviews, and specifications are then seamlessly woven into a natural language recommendation.
+
+Technical Implementation
+------------------------
