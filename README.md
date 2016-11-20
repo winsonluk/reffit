@@ -31,6 +31,8 @@ Finally, the recommended product must be highly relevant to what the user is loo
 
 Technical Implementation
 ------------------------
+Reffit is coded in Python with the Reddit API and Amazon API, using OAuth for authenticating Reddit accounts and Amazon Affiliate tracking, BeautifulSoup for scraping the Amazon website, Pandas and Numpy for data analysis, and SQL for storing and retrieving natural language sentence templates.
+
 Broadly, Reffit works in three steps.
 
 1. For all recent comments from within a set of subreddits with high purchasing activity, calculate a reply confidence for each comment by parsing for relevant keywords.
@@ -38,11 +40,11 @@ Broadly, Reffit works in three steps.
 3. Using data from this product, generate a convincing, human-like recommendation for the product, then return to step 1 to scrape new comments.
 
 ### 1. Searching
-How many of the words in the comment are equivalent to keywords within [this CSV file]?
+How many of the words in the comment are equivalent to keywords within [this CSV file](reffit/data.csv)?
 
 ### 2. Matching
 Does the user mention a brand or product category, and if so, which Amazon product is most relevant to what the user is envisioning?
 
 ### 3. Recommending
-Using [these sentence templates], how can we highlight the product's attributes while maintaining a down-to-earth tone?
+From a database with [these sentence templates](reffit/templates.db), how can we highlight the product's attributes while maintaining a down-to-earth tone?
 
