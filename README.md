@@ -40,9 +40,9 @@ Broadly, Reffit works in three steps.
 3. Using data from this product, generate a convincing, human-like recommendation for the product, then return to step 1 to scrape new comments.
 
 ### 1. Searching
-How many of the words in the comment are equivalent to keywords within [this CSV file](reffit/data.csv)?
+How many of the words in the comment are equivalent to keywords which hint that a user is looking to buy?
 
-|Suggestives (partial list)|
+|[Suggestives (partial list)](reffit/data.csv)|
 |-----------------|
 | recommended     |
 | recommending    |
@@ -78,11 +78,10 @@ How many of the words in the comment are equivalent to keywords within [this CSV
 | products        |
 | item            |
 
-
 ### 2. Matching
 Does the user mention a brand or product category, and if so, which Amazon product is most relevant to what the user is envisioning?
 
-| Categories (partial list)         |
+|[Categories (partial list)](reffit/data.csv)|
 |-----------------------------------|
 | Cold Weather Accessories          |
 | Arm Warmers                       |
@@ -136,5 +135,5 @@ Does the user mention a brand or product category, and if so, which Amazon produ
 | Checkbook Covers                  |
 
 ### 3. Recommending
-From a database with [these sentence templates](reffit/templates.db), how can we highlight the product's attributes while maintaining a down-to-earth tone?
+How can we construct 3-4 sentences to highlight the product's attributes while maintaining a down-to-earth tone?
 
