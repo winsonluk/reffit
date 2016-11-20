@@ -42,8 +42,114 @@ Broadly, Reffit works in three steps.
 ### 1. Searching
 How many of the words in the comment are equivalent to keywords within [this CSV file](reffit/data.csv)?
 
+| Suggestives (partial list)     |
+|-----------------|
+| recommended     |
+| recommending    |
+| recommend       |
+| recommendation  |
+| recommendations |
+| recommends      |
+| favored         |
+| favoring        |
+| favor           |
+| favors          |
+| suggested       |
+| suggesting      |
+| suggest         |
+| suggestion      |
+| suggestions     |
+| suggests        |
+| vouched         |
+| vouching        |
+| vouch           |
+| vouches         |
+| advised         |
+| advising        |
+| advise          |
+| advice          |
+| advises         |
+| advices         |
+| plug            |
+| swear           |
+| praise          |
+| depend          |
+| product         |
+| products        |
+| item            |
+| items           |
+| check           |
+| bought          |
+| buying          |
+| buy             |
+| buys            |
+| purchased       |
+| purchasing      |
+| purchase        |
+| purchases       |
+| found           |
+| finding         |
+| find            |
+| finds           |
+| deal            |
+| price           |
+| worth           |
+
 ### 2. Matching
 Does the user mention a brand or product category, and if so, which Amazon product is most relevant to what the user is envisioning?
+
+| Items (partial list)              |
+|-----------------------------------|
+| Cold Weather Accessories          |
+| Arm Warmers                       |
+| Ear Muffs                         |
+| Fingerless Gloves                 |
+| Hand Muffs                        |
+| Neck Warmers                      |
+| Diaper Bags                       |
+| Prescription Eyewear              |
+| Day Clutches                      |
+| Evening Bags                      |
+| Baseball Caps                     |
+| Cowboy Hats                       |
+| Derby Hats                        |
+| Knit Caps                         |
+| Newsboy Caps                      |
+| Straw Hats                        |
+| Sun Hats                          |
+| Laptop Bags                       |
+| Checkpoint-friendly Laptop Cases  |
+| Hard Drive Cases                  |
+| Laptop Backpacks                  |
+| Laptop Messenger Bags             |
+| Laptop Sleeves                    |
+| Netbook Cases                     |
+| Projector Cases                   |
+| Wheeled Laptop Cases              |
+| Women's Laptop Bags               |
+| Luggage, Bags                     |
+| Duffle Bags                       |
+| Gym Bags                          |
+| Messenger Bags                    |
+| Garment Bags                      |
+| Hardside Luggage                  |
+| Matching Sets                     |
+| Rolling Luggage                   |
+| Travel Accessories                |
+| Luggage Tags                      |
+| Packing Cubes                     |
+| Packing Folders                   |
+| Shoe Bags                         |
+| Sports Fan Accessories            |
+| Tote Bags                         |
+| Hard Hats                         |
+| Neck Ties                         |
+| Bow Ties                          |
+| Wallets, Money                    |
+| Key Organizers                    |
+| Card Cases                        |
+| Money Clips                       |
+| Checkbook Covers                  |
 
 ### 3. Recommending
 From a database with [these sentence templates](reffit/templates.db), how can we highlight the product's attributes while maintaining a down-to-earth tone?
