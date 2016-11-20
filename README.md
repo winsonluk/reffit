@@ -43,8 +43,9 @@ Broadly, Reffit works in three steps.
 2. If a comment exceeds the confidence threshold, search Amazon for a relevant product to the user's comment.
 3. Using data from this product, generate a convincing, human-like recommendation for the product, then return to step 1 to scrape new comments.
 
-### 1. Searching
-How many of the words in the comment are equivalent to keywords which hint that a user is looking to buy?
+1\. Searching
+-------------
+###How many of the words in the comment are equivalent to keywords which hint that a user is looking to buy?
 
 |[Suggestives (partial list)](reffit/data.csv)|
 |-----------------|
@@ -82,8 +83,9 @@ How many of the words in the comment are equivalent to keywords which hint that 
 | products        |
 | item            |
 
-### 2. Matching
-Does the user mention a brand or product category, and if so, which Amazon product is most relevant to what the user is envisioning?
+2\. Matching
+------------
+###Does the user mention a brand or product category, and if so, which Amazon product is most relevant to what the user is envisioning?
 
 |[Categories (partial list)](reffit/data.csv)|
 |-----------------------------------|
@@ -138,8 +140,9 @@ Does the user mention a brand or product category, and if so, which Amazon produ
 | Money Clips                       |
 | Checkbook Covers                  |
 
-### 3. Recommending
-How can we integrate 3-4 sentences together in order to highlight the product's attributes while maintaining a down-to-earth tone?
+3\. Recommending
+----------------
+###How can we integrate 3-4 sentences together in order to highlight the product's attributes while maintaining a down-to-earth tone?
 
 |[brand](reffit/templates.db)|[category](reffit/templates.db)|[price](reffit/templates.db)|[link](reffit/templates.db)|
 |------------------------------------------------------------------------|---------------------------------------------------------------------------|---------------------------------------------------------|-------------------------------------------------------------------------|
