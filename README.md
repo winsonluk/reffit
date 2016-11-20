@@ -36,6 +36,8 @@ Example
     <img src="docs/examples/comment.png" align="center" height="300" />
 </a>
 
+-------
+
 <a href="docs/examples/annotated_comment.png">
     <img src="docs/examples/annotated_comment.png" align="center" height="300" />
 </a>
