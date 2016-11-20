@@ -31,7 +31,7 @@ Finally, the recommended product must be highly relevant to what the user is loo
 
 Example
 -------
-**Disclaimer: Like the Titanic, this bot was live for only four days and for testing purposes only. All referrals generated in this period were redirected to Amazon's charity link, Amazon Smile. While this repository is free and open source, I strongly discourage the use of Reffit solely for financial profit.**
+**Disclaimer: Like the Titanic, this bot was live for only four days and for testing purposes only. All referrals generated in this period were redirected to Amazon's charity link, Amazon Smile. While this repository is free and open source, I strongly discourage the use of Reffit solely for financial profit through Amazon Affiliates.**
 
 Technical Implementation
 ------------------------
