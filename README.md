@@ -16,4 +16,4 @@ Also indicative of a user's purchasing tendency is the text of his or her commen
 
 Furthermore, users who mention the plural form of multiword product category keywords, such as "arm warmers", "laptop sleeves", or "hand sanitizers", are likely to be seeking a suggestions for a particular item within such category.
 
-A comment's subreddit, proportion of suggestive keywords, and mentions of general products can together give us a coherent interpretation of the user's tendency to purchase.
+A comment's subreddit, proportion of suggestive keywords, and mentions of general products can together give us a coherent presumption towards the user's tendency to purchase.
