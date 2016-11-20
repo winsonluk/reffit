@@ -29,6 +29,10 @@ The suggestion itself must sound like a suggestion that a user would hear from h
 
 Finally, the recommended product must be highly relevant to what the user is looking for. The bot determines nouns in a user's comment which correlate to a specific Amazon product category, then returns a relevant, highly-rated product in such category with such keywords. The product's brand, price, decription, reviews, and specifications are then seamlessly woven into a natural language recommendation.
 
+Example
+-------
+**Disclaimer: Like the Titanic, this bot was live for only four days and for testing purposes only. All referrals generated in this period were redirected to Amazon's charity link, Amazon Smile. While this repository is free and open source, I strongly discourage the use of Reffit solely for financial profit.**
+
 Technical Implementation
 ------------------------
 Reffit is coded in Python with the Reddit API and Amazon API, using OAuth for authenticating Reddit accounts and Amazon Affiliate tracking, BeautifulSoup for scraping the Amazon website, Pandas and Numpy for data analysis, and SQL for storing and retrieving natural language sentence templates.
