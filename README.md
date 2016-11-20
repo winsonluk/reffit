@@ -31,3 +31,8 @@ Finally, the recommended product must be highly relevant to what the user is loo
 
 Technical Implementation
 ------------------------
+Broadly, Reffit works in three steps.
+
+1. For all recent comments from within a set of subreddits with high purchasing activity, calculate a reply confidence for each comment by parsing for relevant keywords.
+2. If a comment exceeds the confidence threshold, search Amazon for a relevant product to the user's comment.
+3. Using this data, generate a human-like suggestion for the product, then return to step 1.
