@@ -34,7 +34,7 @@ Example
 **Disclaimer: Like the Titanic, this bot was live for only four days and for testing purposes only. All referrals generated in this period were redirected to Amazon's charity link, Amazon Smile. While this repository is free and open source, I strongly discourage the use of Reffit solely for financial profit.**
 
 Technical Implementation
-------------------------
+========================
 Reffit is coded in Python with the Reddit API and Amazon API, using OAuth for authenticating Reddit accounts and Amazon Affiliate tracking, BeautifulSoup for scraping the Amazon website, Pandas and Numpy for data analysis, and SQL for storing and retrieving natural language sentence templates.
 
 Broadly, Reffit works in three steps.
