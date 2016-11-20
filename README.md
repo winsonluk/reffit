@@ -37,8 +37,10 @@ Broadly, Reffit works in three steps.
 2. If a comment exceeds the confidence threshold, search Amazon for a relevant product to the user's comment.
 3. Using data from this product, generate a convincing, human-like recommendation for the product, then return to step 1 to scrape new comments.
 
-###Header
+### 1. Searching
 
->yrdy
->test
->## test
+### 2. Matching
+
+### 3. Recommending
+
+
