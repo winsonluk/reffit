@@ -1,4 +1,4 @@
-<a href="http://i.imgur.com/kEuEVYV.png">
+<a href="https://github.com/winsonluk/reffit/blob/master/docs/images/logo.gif?raw=true">
     <img src="docs/images/logo_tiny.gif" align="right" height="70" />
 </a>
 
